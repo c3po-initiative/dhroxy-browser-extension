@@ -1,0 +1,5 @@
+dhroxy-browser-extension (MitData)
+Copyright 2026 the c3po-initiative contributors
+
+The FHIR R4 mappers in mappers.js are ported to JavaScript from dhroxy
+(https://github.com/c3po-initiative/dhroxy), licensed under Apache-2.0.

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <title>Indstillinger – MitData</title>
+  <link rel="stylesheet" href="mitdata.css">
+</head>
+<body>
+  <div class="page">
+    <header class="bar">
+      <div class="logo"><span class="logo-mark">M</span><span>MitData</span></div>
+      <span class="pill">Plugin</span>
+    </header>
+    <h1>Indstillinger</h1>
+    <p class="meta">Pluginet henter kun data, når du beder om det, og sender kun det, du har valgt.</p>
+
+    <section class="card">
+      <label class="field"><span class="label">MitData-server</span>
+        <input id="fhirUrl" placeholder="http://localhost:8090/fhir">
+        <p class="meta">Adressen på den FHIR-server, dine data overføres til. Andre adresser end din egen computer kræver, at du giver adgang, når du gemmer.</p>
+      </label>
+      <label class="field"><span class="label">Adgangsnøgle (valgfri)</span>
+        <input id="fhirToken" type="password" autocomplete="off">
+        <p class="meta">Bruges kun, hvis serveren kræver login. Gemmes i denne browser.</p>
+      </label>
+      <label class="field"><span class="label">Laboratoriesvar: år tilbage</span>
+        <input id="labYears" type="number" min="1" max="20" placeholder="2">
+        <p class="meta">Flere år giver flere data og længere hentetid.</p>
+      </label>
+      <div style="margin-top:18px"><button class="btn primary small" id="save">Gem</button><span class="saved" id="msg"></span></div>
+    </section>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

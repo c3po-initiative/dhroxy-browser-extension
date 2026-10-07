@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <title>MitData</title>
+  <link rel="stylesheet" href="mitdata.css">
+</head>
+<body class="popup">
+  <header class="bar">
+    <div class="logo"><span class="logo-mark">M</span><span>MitData</span></div>
+    <span class="pill">Plugin</span>
+  </header>
+
+  <main>
+    <!-- Step 1: sundhed.dk session -->
+    <section class="card step" id="stepLogin">
+      <div class="step-head"><span class="num">1</span><h2>Log ind på Sundhed.dk</h2></div>
+      <p class="status" id="sessionStatus"></p>
+      <button class="btn secondary small" id="openSundhed" hidden>Åbn sundhed.dk</button>
+    </section>
+
+    <!-- Step 2: fetch + choose -->
+    <section class="card step" id="stepChoose">
+      <div class="step-head"><span class="num">2</span><h2>Vælg dine oplysninger</h2></div>
+      <p class="meta" id="chooseIntro">Hent dine data fra sundhed.dk. Intet overføres, før du har valgt og bekræftet.</p>
+      <button class="btn primary" id="fetch">Hent mine data</button>
+      <div id="choices" hidden>
+        <ul class="choices" id="choiceList"></ul>
+        <details class="issues" id="issues" hidden><summary id="issuesSummary"></summary><ul id="issueList"></ul></details>
+      </div>
+    </section>
+
+    <!-- Step 3: transfer -->
+    <section class="card step" id="stepTransfer">
+      <div class="step-head"><span class="num">3</span><h2>Overfør til MitData</h2></div>
+      <p class="meta" id="transferInfo">Vælg først dine oplysninger.</p>
+      <button class="btn primary" id="upload" disabled>Overfør valgte</button>
+      <div class="confirm" id="confirm" hidden>
+        <p id="confirmText"></p>
+        <div class="row">
+          <button class="btn secondary small" id="cancel">Fortryd</button>
+          <button class="btn primary small" id="confirmBtn">Ja, overfør</button>
+        </div>
+      </div>
+      <div class="balance" id="result" hidden>
+        <small>Overført til din profil</small>
+        <strong id="resultCount"></strong>
+        <span class="meta" id="resultMeta"></span>
+      </div>
+      <p class="error" id="uploadError" hidden></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="trust">Ingen deling uden dit klik · Data ligger kun i hukommelsen</p>
+    <div class="row">
+      <a href="#" id="opts">Indstillinger</a>
+      <a href="#" id="forget">Glem mine data</a>
+    </div>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>
